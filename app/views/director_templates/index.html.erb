@@ -4,7 +4,9 @@
   <% @list_of_directors.all.each do |a_thing| %>
     <tr>
       <td><%= a_thing.id %></td>
-      <td><%= a_thing.image %></td>
+      <td>
+        <img src="http://robohash.org/<%= a_thing.image %>">
+      </td>
       <td><%= a_thing.name %></td>
       <td><%= a_thing.dob %></td>
     </tr>
