@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get("/directors/eldest", { :controller => "directors", :action => "oldest" })
 
   get("/directors/:id", { :controller => "directors", :action => "director_page" })
+
+  get("/movies", { :controller => "movies", :action => "index" })
   
 end
