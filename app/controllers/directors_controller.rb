@@ -15,4 +15,20 @@ class DirectorsController < ApplicationController
     render({ :template => "director_templates/youngest_director.html.erb"})
   end
 
+  def oldest
+    
+
+  end
+
+  def director_page
+    @director_id = params.fetch(:id).to_i
+    @director = Director.where({ :id => @director_id }).at(0)
+    @name = @director.name
+    @dob = @director.dob
+    @bio = @director.bio
+    @created = @director.created_at
+    @updated = @director.updated_at
+
+    render({ :template => "director_templates/director_page.html.erb"})
+  end
 end
