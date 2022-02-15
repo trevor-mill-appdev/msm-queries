@@ -1,0 +1,30 @@
+<h1>Movie #<%= @movie_id %> details</h1>
+<a href="/movies" class="btn btn-block btn-outline-secondary">Go back</a>
+
+<hr>
+
+<dl>
+  <dt>Title</dt>
+  <dd><%= @title %></dd>
+
+  <dt>Year</dt>
+  <dd><%= @year %></dd>
+
+  <dt>Duration</dt>
+  <dd><%= @duration %></dd>
+
+  <dt>Description</dt>
+  <dd><%= @description %></dd>
+
+  <dt>Image</dt>
+  <dd><img src="http://robohash.org/<%= @movie.id %>"></dd>
+
+  <dt>Director</dt>
+  <dd><%= @director_name %></dd>
+
+  <dt>Created at</dt>
+  <dd><%= @created %></dd>
+
+  <dt>Updated at</dt>
+  <dd><%= @updated %></dd>
+</dl>
