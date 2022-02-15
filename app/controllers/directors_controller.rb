@@ -8,7 +8,7 @@ class DirectorsController < ApplicationController
   end
 
   def youngest
-    @min_dob = Director.minimum(:dob)
+    @min_dob = Director.maximum(:dob)
     @youngest = Director.where({ :dob => @min_dob }).first
     
 
@@ -16,8 +16,10 @@ class DirectorsController < ApplicationController
   end
 
   def oldest
-    
+    @max_dob = Director.minimum(:dob)
+    @oldest = Director.where({ :dob => @max_dob }).first
 
+    render({ :template => "director_templates/oldest_director.html.erb"})
   end
 
   def director_page
