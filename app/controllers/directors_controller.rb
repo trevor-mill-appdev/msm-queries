@@ -29,6 +29,8 @@ class DirectorsController < ApplicationController
     @created = @director.created_at
     @updated = @director.updated_at
 
+    @movies = Movie.where({ :director_id => @director_id })
+
     render({ :template => "director_templates/director_page.html.erb"})
   end
 end

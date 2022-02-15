@@ -14,7 +14,7 @@
   <dd><%= @bio %></dd>
 
   <dt>Image</dt>
-  <dd><img src="http://robohash.org/<%= @director_id %>">
+  <dd><img src="http://robohash.org/<%= @director.image %>">
 
   <dt>Created at</dt>
   <dd><%= @created %></dd>
@@ -22,3 +22,29 @@
   <dt>Updated at</dt>
   <dd><%= @updated %></dd>
 </dl>
+
+<hr>
+
+<h1>Filmography</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th></th>
+  </tr>
+  <% @movies.all.each do |movie| %>
+    <tr>
+      <td><%= movie.id %></td>
+      <td><img src="http://robohash.rog/<%= movie.image %>"></td>
+      <td><%= movie.title %></td>
+      <td><%= movie.year %></td>
+      <td><%= @name %></td>
+      <td>
+        <a href="/movies/<%= movie.id %>">Show details</a>
+      </td>
+    </tr>
+  <% end %>
